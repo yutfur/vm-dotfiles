@@ -72,6 +72,7 @@ packagelist=(
    "copyq"
    "p7zip"
    "pacman-contrib"
+   "chromium"
    #"libreoffice-still"
 
    # Shell, Command
