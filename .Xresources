@@ -1,0 +1,14 @@
+! DPI
+! https://wiki.archlinux.jp/index.php/Xorg#.E6.89.8B.E5.8B.95.E3.81.A7_DPI_.E3.82.92.E8.A8.AD.E5.AE.9A.E3.81.99.E3.82.8B
+! https://wiki.archlinux.jp/index.php/HiDPI#X_Resources
+! 4K スケールそのまま＝ 4K の表示領域そのままでは全てが小さくて見づらいので、DPI をデフォルトの96の1.5倍( +50% )に増やすことで要素を WQHD 相当に拡大して表示する
+Xft.dpi: 144
+Xft.autohint: 0
+Xft.lcdfilter:  lcddefault
+Xft.hintstyle:  hintfull
+Xft.hinting: 1
+Xft.antialias: 1
+Xft.rgba: rgb
+! カーソル
+Xcursor.theme: Adwaita
+Xcursor.size: 32
