@@ -1,7 +1,7 @@
 # vm-dotfiles
 
 ## Requirement
-- Arch Linux on VM Workstation
+- Arch Linux on VMware Workstation
 
 ## Download
 
