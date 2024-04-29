@@ -54,7 +54,7 @@ setopt no_beep
 
 # cdの後にlsを実行 (https://qiita.com/d-dai/items/d7f329b7d82e2165dab3)
 # chpwd() { ls -aF --color=auto }
-chpwd() { exa --icons -aF }
+chpwd() { eza --icons -aF }
 
 # cd したら自動的に pushd コマンドを実行する
 setopt auto_pushd

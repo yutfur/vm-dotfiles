@@ -6,8 +6,8 @@
 
 # paru
 
-# exa
-alias ls='exa --icons -aF'
+# eza
+alias ls='eza --icons -aF'
 
 # ripgrep-all
 alias grep='rga'

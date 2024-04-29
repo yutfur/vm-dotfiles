@@ -84,7 +84,7 @@ packagelist=(
    "ripgrep-all"
    "tree"
    "bat"
-   "exa"
+   "eza"
    "fd"
    "fzf"
    "lf"
