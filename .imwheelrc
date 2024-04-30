@@ -1,3 +1,9 @@
-".*"
-None,      Up,   Button4, 4
-None,      Down, Button5, 4
+# Brave Browser において以下のスクロール量を適用する
+"^brave-browser$"
+    None, Up, Button4, 4
+    None, Down, Button5, 4
+
+# Chromium において以下のスクロール量を適用する
+"^chromium$"
+    None, Up, Button4, 4
+    None, Down, Button5, 4

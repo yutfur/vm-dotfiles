@@ -67,6 +67,8 @@ input-remapper-control --command autoload
 sleep 2 && $HOME/vm-dotfiles/.config/polybar/launch.sh &
 # CopyQ (起動を少し遅らせないとトレイアイコンが表示されなくなる場合がある)
 sleep 5 && copyq &
+# IMWheel
+imwheel &
 
 # i3 を自動起動する
 # 一番下の行に置く
