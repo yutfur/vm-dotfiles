@@ -30,6 +30,7 @@ packagelist=(
    "mesa"
    "xf86-input-vmmouse"
    "ntfs-3g"
+   #"imwheel"
    #"piper"
 
    # IME
