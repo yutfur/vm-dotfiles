@@ -96,9 +96,8 @@ set shiftwidth=4
 " softtabstopで設定されている値分の半角スペースが挿入されてもタブに変換しない (https://yu8mada.com/2018/08/26/i-ll-explain-vim-s-5-tab-and-space-related-somewhat-complicated-options-as-simply-as-possible/)
 set expandtab
 
-" 自動インデント (https://vim-jp.org/vimdoc-ja/options.html#'smartindent')
+" 自動インデント (https://vim-jp.org/vimdoc-ja/indent.html)
 set smartindent
-set autoindent
 
 " -------------------------------------------------------------------------------------------
 " 検索
