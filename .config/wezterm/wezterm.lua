@@ -5,7 +5,7 @@ local config = {
 
     -- 全体設定
     scrollback_lines = 10000, -- コマンド履歴の最大行数
-    enable_wayland = false, -- X11 を利用しているので
+    enable_wayland = true, -- Wayland を利用しているので
     warn_about_missing_glyphs = false, -- フォントについての警告を表示しない
     -- enable_scroll_bar = true, -- スクロールバーを表示する
     -- 端まで描写されないときは Ctrl + Shift + r で設定ファイルをリロードすると直る
