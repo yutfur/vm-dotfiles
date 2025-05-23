@@ -31,9 +31,9 @@ packagelist=(
    # Preview (ctpv)
    # https://github.com/NikitaIvanovV/ctpv
    # pdftoppm は poppler に同梱されている
-   "chafa"
-   "ffmpegthumbnailer"
-   "poppler"
+   #"chafa"
+   #"ffmpegthumbnailer"
+   #"poppler"
    #"w3m"
    #"mdcat"
    #"jq"
@@ -68,7 +68,6 @@ packagelist=(
    # Shell, Command
    "wezterm"
    "zsh"
-   "lf"
    "curl"
    "wget"
    "ripgrep-all"
@@ -77,6 +76,7 @@ packagelist=(
    "eza"
    "fd"
    "fzf"
+   #"lf"
    #"gnome-terminal"
 
    # Dev
@@ -113,7 +113,7 @@ paru -Syu
 aurs=(
    "visual-studio-code-bin"
    "input-remapper-git"
-   "ctpv-git"
+   #"ctpv-git"
 )
 
 # install AUR packages
