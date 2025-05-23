@@ -1,12 +1,12 @@
 #!/bin/bash
 
-# ホームディレクトリ内に bin, pictures, downloads ディレクトリを作成
-for d in "bin" "pictures" "downloads"
+# ホームディレクトリ内に bin, downloads, pictures, ~/pictures/wallpaper, ~/pictures/screenshots ディレクトリを作成
+for d in "bin" "downloads" "pictures"
 do
     mkdir -p "${HOME}"/"${d}"
 done
-mkdir -p "${HOME}"/pictures/screenshots
 mkdir -p "${HOME}"/pictures/wallpaper
+mkdir -p "${HOME}"/pictures/screenshots
 
 DOTFILES_PATH="${HOME}/vm-dotfiles"
 

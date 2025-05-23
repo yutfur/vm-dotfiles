@@ -111,9 +111,11 @@ paru -Syu
 
 # aur package list
 aurs=(
+
    "visual-studio-code-bin"
    "input-remapper-git"
    #"ctpv-git"
+
 )
 
 # install AUR packages
