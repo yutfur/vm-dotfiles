@@ -29,9 +29,6 @@ export GTK_IM_MODULE=fcitx
 export QT_IM_MODULE=fcitx
 export XMODIFIERS="@im=fcitx"
 
-# ログイン時に X を自動起動 ( ~/.xinitrc を読み込む)
-# 一番下の行に置く
-if [ -z "${DISPLAY}" ] && [ "${XDG_VTNR}" -eq 1 ]; then
-    exec startx
-fi
-
+# 自動起動 (継続的に起動させるプログラムを実行するコマンドには末尾に & を付ける)
+# vmware-user-suid-wrapper を起動する (ホスト OS とゲスト OS の間でクリップボード共有を有効化するため)
+/usr/bin/vmware-user-suid-wrapper &
