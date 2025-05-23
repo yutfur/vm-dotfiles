@@ -25,7 +25,7 @@ do
 done
 
 # $HOME/.config/... ディレクトリを作成
-for d in "nvim" "i3" "wezterm" "lf" "rofi" "polybar"
+for d in "nvim" "wezterm" "lf"
 do
     mkdir -p "${HOME}"/.config/"${d}"
 done
@@ -42,9 +42,6 @@ cp -i "${DOTFILES_PATH}"/.config/nvim/colors/colorscheme/* "${HOME}"/.config/nvi
 # init.vim のシンボリックリンクを $HOME/.config/nvim 直下に貼る
 ln -snfv "${DOTFILES_PATH}"/.config/nvim/init.vim "${HOME}"/.config/nvim/init.vim
 
-# i3 のシンボリックリンクを $HOME/.config/i3 直下に貼る
-ln -snfv "${DOTFILES_PATH}"/.config/i3/config "${HOME}"/.config/i3/config
-
 # wezterm.lua のシンボリックリンクを $HOME/.config/wezterm 直下に貼る
 ln -snfv "${DOTFILES_PATH}"/.config/wezterm/wezterm.lua "${HOME}"/.config/wezterm/wezterm.lua
 
@@ -53,10 +50,4 @@ for f in "lfrc" "icons" "colors"
 do
     ln -snfv "${DOTFILES_PATH}"/.config/lf/"${f}" "${HOME}"/.config/lf/"${f}"
 done
-
-# rofi のシンボリックリンクを $HOME/.config/rofi 直下に貼る
-ln -snfv "${DOTFILES_PATH}"/.config/rofi/config.rasi "${HOME}"/.config/rofi/config.rasi
-
-# polybar のシンボリックリンクを $HOME/.config/polybar 直下に貼る
-ln -snfv "${DOTFILES_PATH}"/.config/polybar/config.ini "${HOME}"/.config/polybar/config.ini
 

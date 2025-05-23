@@ -6,22 +6,10 @@ sudo pacman -Syu
 # package list
 packagelist=(
 
-   # X
-   "xorg-server"
-   "xorg-xinit"
-   "xorg-xrandr"
-   "arandr"
-   "xdg-utils"
-   "xclip"
+   # Display Server
+   #"xorg-xwayland"
 
    # UI
-   "i3-wm"
-   "i3lock"
-   "i3status"
-   "rofi"
-   "polybar"
-   "libnotify"
-   "notification-daemon"
 
    # Hardware
    "open-vm-tools"
@@ -33,31 +21,17 @@ packagelist=(
    "imwheel"
    #"piper"
 
-   # IME
-   # Enter a selection に 1-4 (全て) と入力する
-   "fcitx5-im"
-   "fcitx5-mozc"
-
-   # Security
-   "polkit"
-   "polkit-gnome"
-   "libsecret"
-   "gnome-keyring"
-   #"clamav"
-   #"ufw"
-
    # Audio
    "pipewire"
-   "playerctl"
+   #"playerctl"
 
    # Image
-   "feh"
+   #"imv"
 
    # Preview (ctpv)
    # https://github.com/NikitaIvanovV/ctpv
-   # chafa ではプレビューできない
    # pdftoppm は poppler に同梱されている
-   "ueberzug"
+   "chafa"
    "ffmpegthumbnailer"
    "poppler"
    #"w3m"
@@ -66,20 +40,35 @@ packagelist=(
    #"fontimage"
    #"convert"
 
-   # Misc
+   # Security
+   #"polkit"
+   #"polkit-gnome"
+   #"libsecret"
+   #"gnome-keyring"
+   #"clamav"
+   #"ufw"
+
+   # IME
+   # Enter a selection に 1-4 (全て) と入力する
+   "fcitx5-im"
+   "fcitx5-mozc"
+
+   # Misc, Tools
    "man-db"
    "man-pages"
+   "timeshift"
    "hugo"
    "copyq"
-   "p7zip"
    "pacman-contrib"
    "chromium"
    #"libreoffice-still"
+   #"libreoffice-still-ja"
+   #"p7zip"
 
    # Shell, Command
    "wezterm"
-   "gnome-terminal"
    "zsh"
+   "lf"
    "curl"
    "wget"
    "ripgrep-all"
@@ -88,14 +77,14 @@ packagelist=(
    "eza"
    "fd"
    "fzf"
-   "lf"
+   #"gnome-terminal"
 
    # Dev
    "git"
    "neovim"
-   "vi"
+   #"vi"
 
-   # Java Dev
+   # Java
    "jdk17-openjdk"
 
    # DB
@@ -123,9 +112,7 @@ paru -Syu
 # aur package list
 aurs=(
    "visual-studio-code-bin"
-   "timeshift"
    "input-remapper-git"
-   "man-pages-ja"
    "ctpv-git"
 )
 
