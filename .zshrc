@@ -20,7 +20,7 @@ source $HOME/vm-dotfiles/zsh/aliases.zsh
 # キーバインド
 source $HOME/vm-dotfiles/zsh/keybindings.zsh
 
-# ターミナル起動時にtmux自動起動(デタッチしたセッションが存在しなければ新しいセッションで起動し、デタッチしたセッションが存在すれば直近のセッションで起動する)
+# ターミナル起動時に tmux 自動起動 (デタッチしたセッションが存在しなければ新しいセッションで起動し、デタッチしたセッションが存在すれば直近のセッションで起動する)
 # https://www.mk-mode.com/blog/2013/06/06/linux-mint-tmux-auto-attach/
 # if [ -z $TMUX ]; then
 #   if $(tmux has-session 2> /dev/null); then
