@@ -18,16 +18,16 @@ fi
 export JAVA_HOME="/usr/lib/jvm/java-17-openjdk"
 export PATH="$PATH:$JAVA_HOME/bin"
 
+# fcitx5 の環境変数の設定
+export XMODIFIERS=@im=fcitx
+#export GTK_IM_MODULE=fcitx
+#export QT_IM_MODULE=fcitx
+
 # デフォルトエディタを Neovim にする
 export EDITOR=nvim
 
 # デフォルトターミナルを WezTerm にする
 export TERMINAL=wezterm
-
-# fcitx5 の環境変数の設定
-export GTK_IM_MODULE=fcitx
-export QT_IM_MODULE=fcitx
-export XMODIFIERS="@im=fcitx"
 
 # 自動起動 (継続的に起動させるプログラムを実行するコマンドには末尾に & を付ける)
 # vmware-user-suid-wrapper を起動する (ホスト OS とゲスト OS の間でクリップボード共有を有効化するため)
