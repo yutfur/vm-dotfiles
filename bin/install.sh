@@ -81,7 +81,6 @@ packagelist=(
    # Dev
    "git"
    "neovim"
-   #"vi"
 
    # Java
    "jdk17-openjdk"
