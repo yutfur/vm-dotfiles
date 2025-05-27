@@ -23,8 +23,8 @@ export XMODIFIERS=@im=fcitx
 #export GTK_IM_MODULE=fcitx
 #export QT_IM_MODULE=fcitx
 
-# デフォルトエディタを Neovim にする
-export EDITOR=nvim
+# デフォルトエディタを Vim にする
+export EDITOR=vim
 
 # デフォルトターミナルを WezTerm にする
 export TERMINAL=wezterm
