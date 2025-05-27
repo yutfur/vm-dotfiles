@@ -12,10 +12,10 @@ packagelist=(
    # UI
 
    # Hardware
+   "mesa"
+   "xf86-video-vmware"
    "open-vm-tools"
    "gtkmm3"
-   "xf86-video-vmware"
-   "mesa"
    "xf86-input-vmmouse"
    "ntfs-3g"
    "imwheel"
@@ -56,11 +56,11 @@ packagelist=(
    # Misc, Tools
    "man-db"
    "man-pages"
-   "timeshift"
-   "hugo"
-   "copyq"
    "pacman-contrib"
+   "copyq"
+   "hugo"
    "chromium"
+   #"timeshift"
    #"libreoffice-still"
    #"libreoffice-still-ja"
    #"p7zip"
@@ -77,7 +77,6 @@ packagelist=(
    "fd"
    "fzf"
    #"lf"
-   #"gnome-terminal"
 
    # Dev
    "git"
@@ -113,7 +112,6 @@ paru -Syu
 aurs=(
 
    "visual-studio-code-bin"
-   "input-remapper-git"
    #"ctpv-git"
 
 )
