@@ -24,8 +24,7 @@ alias ...='../..'
 alias ....='../../..'
 
 # neovim
-alias vi='nvim'
-alias vim='nvim'
+alias vi='vim'
 
 # git
 
