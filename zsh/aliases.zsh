@@ -23,7 +23,7 @@ alias cat='bat'
 alias ...='../..'
 alias ....='../../..'
 
-# neovim
+# vim
 alias vi='vim'
 
 # git
