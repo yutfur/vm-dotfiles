@@ -17,8 +17,8 @@ packagelist=(
    "open-vm-tools"
    "gtkmm3"
    "xf86-input-vmmouse"
-   "ntfs-3g"
    "imwheel"
+   #"ntfs-3g"
 
    # Audio
    "pipewire"
@@ -63,7 +63,7 @@ packagelist=(
 
    # Shell, Command
    "wezterm"
-   "zsh"
+   "fzf"
    "curl"
    "wget"
    "ripgrep-all"
@@ -71,12 +71,11 @@ packagelist=(
    "bat"
    "eza"
    "fd"
-   "fzf"
    #"lf"
 
    # Dev
    "git"
-   "neovim"
+   "vim"
 
    # Java
    "jdk17-openjdk"
