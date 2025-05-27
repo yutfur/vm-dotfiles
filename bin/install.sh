@@ -19,7 +19,6 @@ packagelist=(
    "xf86-input-vmmouse"
    "ntfs-3g"
    "imwheel"
-   #"piper"
 
    # Audio
    "pipewire"
@@ -60,9 +59,6 @@ packagelist=(
    "copyq"
    "hugo"
    "chromium"
-   #"timeshift"
-   #"libreoffice-still"
-   #"libreoffice-still-ja"
    #"p7zip"
 
    # Shell, Command
