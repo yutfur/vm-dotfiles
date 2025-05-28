@@ -26,9 +26,6 @@ export XMODIFIERS=@im=fcitx
 # デフォルトエディタを Vim にする
 export EDITOR=vim
 
-# デフォルトターミナルを WezTerm にする
-export TERMINAL=wezterm
-
 # 自動起動 (継続的に起動させるプログラムを実行するコマンドには末尾に & を付ける)
 # vmware-user-suid-wrapper を起動する (ホスト OS とゲスト OS の間でクリップボード共有を有効化するため)
 /usr/bin/vmware-user-suid-wrapper &
