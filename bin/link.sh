@@ -25,7 +25,7 @@ do
 done
 
 # $HOME/.config/... ディレクトリを作成
-for d in "nvim" "wezterm"
+for d in "nvim"
 do
     mkdir -p "${HOME}"/.config/"${d}"
 done
@@ -41,7 +41,4 @@ mkdir -p "${HOME}"/.config/nvim/colors
 cp -i "${DOTFILES_PATH}"/.config/nvim/colors/colorscheme/* "${HOME}"/.config/nvim/colors/
 # init.vim のシンボリックリンクを $HOME/.config/nvim 直下に貼る
 ln -snfv "${DOTFILES_PATH}"/.config/nvim/init.vim "${HOME}"/.config/nvim/init.vim
-
-# wezterm.lua のシンボリックリンクを $HOME/.config/wezterm 直下に貼る
-ln -snfv "${DOTFILES_PATH}"/.config/wezterm/wezterm.lua "${HOME}"/.config/wezterm/wezterm.lua
 
