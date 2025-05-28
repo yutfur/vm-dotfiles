@@ -6,7 +6,7 @@ sudo pacman -Syu
 # package list
 packagelist=(
 
-   # Display Server
+   # Wayland
    #"xorg-xwayland"
 
    # UI
@@ -22,28 +22,10 @@ packagelist=(
 
    # Audio
    "pipewire"
-   #"playerctl"
 
    # Image
-   #"imv"
-
-   # Preview (ctpv)
-   # https://github.com/NikitaIvanovV/ctpv
-   # pdftoppm は poppler に同梱されている
-   #"chafa"
-   #"ffmpegthumbnailer"
-   #"poppler"
-   #"w3m"
-   #"mdcat"
-   #"jq"
-   #"fontimage"
-   #"convert"
 
    # Security
-   #"polkit"
-   #"polkit-gnome"
-   #"libsecret"
-   #"gnome-keyring"
    #"clamav"
    #"ufw"
 
@@ -53,16 +35,16 @@ packagelist=(
    "fcitx5-mozc"
 
    # Misc, Tools
+   "vim"
    "man-db"
    "man-pages"
    "pacman-contrib"
-   "copyq"
    "hugo"
+   "copyq"
    "chromium"
-   #"p7zip"
 
    # Shell, Command
-   "wezterm"
+   "zellij"
    "fzf"
    "curl"
    "wget"
@@ -71,11 +53,9 @@ packagelist=(
    "bat"
    "eza"
    "fd"
-   #"lf"
 
    # Dev
    "git"
-   "vim"
 
    # Java
    "jdk17-openjdk"
@@ -106,7 +86,6 @@ paru -Syu
 aurs=(
 
    "visual-studio-code-bin"
-   #"ctpv-git"
 
 )
 
