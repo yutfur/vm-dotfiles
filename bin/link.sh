@@ -35,10 +35,6 @@ for d in "swap" "undo" "plugged"
 do
     mkdir -p "${HOME}"/.local/share/nvim/"${d}"
 done
-# Neovim 用のカラースキームをコピー
-# lightline.vim 用のカラースキームは、lightline.vim をインストールする前に配置すると、エラーが起きて lightline.vim がインストールできなくなる・されなくなるので、lightline.vim をインストールした後に配置する必要がある (詳細は arch-settings.md の dotfiles の項を参照)
-mkdir -p "${HOME}"/.config/nvim/colors
-cp -i "${DOTFILES_PATH}"/.config/nvim/colors/colorscheme/* "${HOME}"/.config/nvim/colors/
 # init.vim のシンボリックリンクを $HOME/.config/nvim 直下に貼る
 ln -snfv "${DOTFILES_PATH}"/.config/nvim/init.vim "${HOME}"/.config/nvim/init.vim
 
