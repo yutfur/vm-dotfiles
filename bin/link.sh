@@ -9,9 +9,8 @@ done
 mkdir -p "${HOME}"/pictures/wallpaper
 mkdir -p "${HOME}"/pictures/screenshots
 
-DOTFILES_PATH="${HOME}/vm-dotfiles"
-
 # $HOME/vm-dotfiles に移動
+DOTFILES_PATH="${HOME}/vm-dotfiles"
 cd "${DOTFILES_PATH}" || exit
 
 # $HOME/vm-dotfiles 直下にあるドット始まりの2文字以上のファイルやディレクトリを取得し、それぞれに対するシンボリックリンクをホームディレクトリに貼る
