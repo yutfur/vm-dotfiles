@@ -31,7 +31,7 @@ do
 done
 
 # Neovim 用のディレクトリを作成
-for d in "swap" "undo" "plugged"
+for d in "recovery" "plugged"
 do
     mkdir -p "${HOME}"/.local/share/nvim/"${d}"
 done
