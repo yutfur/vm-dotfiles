@@ -5,6 +5,7 @@ for d in "bin" "downloads" "pictures"
 do
     mkdir -p "${HOME}"/"${d}"
 done
+
 mkdir -p "${HOME}"/pictures/wallpaper
 mkdir -p "${HOME}"/pictures/screenshots
 
