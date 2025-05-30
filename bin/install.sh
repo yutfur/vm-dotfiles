@@ -35,7 +35,7 @@ packagelist=(
    "fcitx5-mozc"
 
    # Misc, Tools
-   "vim"
+   "gvim"
    "man-db"
    "man-pages"
    "pacman-contrib"
