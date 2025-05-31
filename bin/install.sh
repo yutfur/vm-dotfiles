@@ -6,11 +6,6 @@ sudo pacman -Syu
 # package list
 packagelist=(
 
-   # Wayland
-   #"xorg-xwayland"
-
-   # UI
-
    # Hardware
    "mesa"
    "xf86-video-vmware"
@@ -19,6 +14,11 @@ packagelist=(
    "xf86-input-vmmouse"
    "imwheel"
    #"ntfs-3g"
+
+   # Wayland
+   #"xorg-xwayland"
+
+   # UI
 
    # Audio
    "pipewire"
@@ -48,11 +48,6 @@ packagelist=(
    "fzf"
    "curl"
    "wget"
-   "ripgrep-all"
-   "tree"
-   "bat"
-   "eza"
-   "fd"
 
    # Dev
    "git"
