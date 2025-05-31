@@ -25,16 +25,14 @@ do
 done
 
 # $HOME/.config/... ディレクトリを作成
-for d in "nvim"
+for d in "lf"
 do
     mkdir -p "${HOME}"/.config/"${d}"
 done
 
-# Neovim 用のディレクトリを作成
-for d in "recovery" "plugged"
+# Vim
+# Vim 用のディレクトリを作成
+for d in "recovery"
 do
-    mkdir -p "${HOME}"/.local/share/nvim/"${d}"
+    mkdir -p "${HOME}"/.vim/"${d}"
 done
-# init.vim のシンボリックリンクを $HOME/.config/nvim 直下に貼る
-ln -snfv "${DOTFILES_PATH}"/.config/nvim/init.vim "${HOME}"/.config/nvim/init.vim
-
