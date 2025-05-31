@@ -5,8 +5,11 @@
 # If not running interactively, don't do anything
 [[ $- != *i* ]] && return
 
-alias ls='ls --color=auto'
+# エイリアス (設定しすぎないこと)
+alias ls='ls -alF --color=always'
 alias grep='grep --color=auto'
+
+# プロンプト
 PS1='[\u@\h \W]\$ '
 
 # fzf 有効化
