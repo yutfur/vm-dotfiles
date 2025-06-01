@@ -43,9 +43,10 @@ packagelist=(
    "copyq"
    "chromium"
 
-   # Shell, Command
+   # Terminal, Shell, Command
    "zellij"
    "fzf"
+   "lf"
 
    # Dev
    "git"
