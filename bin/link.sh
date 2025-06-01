@@ -36,5 +36,13 @@ for d in "recovery"
 do
     mkdir -p "${HOME}"/.vim/"${d}"
 done
-# $HOME/.vimrc をシンボリックリンクとして作成する
+# .vimrc のシンボリックリンクを $HOME 直下に貼る
 ln -snfv "${DOTFILES_PATH}"/.vim/vimrc "${HOME}"/.vimrc
+
+# lf
+# lf の設定ファイルのシンボリックリンクを $HOME/.config/lf 直下に貼る
+for f in "lfrc" "icons" "colors"
+do
+    ln -snfv "${DOTFILES_PATH}"/.config/lf/"${f}" "${HOME}"/.config/lf/"${f}"
+done
+
