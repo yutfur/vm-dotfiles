@@ -38,35 +38,26 @@ call plug#begin()
 # Make sure you use single quotes
 
 # LSP / コーディング
+Plug 'prabirshrestha/vim-lsp'
+Plug 'mattn/vim-lsp-settings'
+# 自動補完
+Plug 'prabirshrestha/asyncomplete.vim'
+Plug 'prabirshrestha/asyncomplete-lsp.vim'
 
 # Markdown のプレビュー表示
 Plug 'iamcco/markdown-preview.nvim', { 'do': { -> mkdp#util#install() }, 'for': ['markdown', 'vim-plug']}
 
+# インデントガイドの表示
+Plug 'nathanaelkane/vim-indent-guides'
+# 設定
+g:indent_guides_enable_on_vim_startup = 1
+g:indent_guides_start_level = 2
+g:indent_guides_guide_size = 1
+g:indent_guides_exclude_filetypes = ['help']
+
 # ファジーファインダー
 Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
 Plug 'junegunn/fzf.vim'
-let g:fzf_action = {
-  \ 'ctrl-t': 'tab split',
-  \ 'ctrl-s': 'split',
-  \ 'ctrl-v': 'vsplit' }
-# Rg(ripgrep)コマンドで検索中にプレビュー表示
-command! -bang -nargs=* Rg
-  \ call fzf#vim#grep(
-  \   'rg --column --line-number --no-heading --color=always --smart-case -- '.shellescape(<q-args>), 1,
-  \   fzf#vim#with_preview(), <bang>0)nvi
-# Filesコマンドでもプレビュー表示
-command! -bang -nargs=? -complete=dir Files
-    \ call fzf#vim#files(<q-args>, fzf#vim#with_preview({'options': ['--layout=reverse', '--info=inline']}), <bang>0)
-# fzf キーバインド
-let g:fzf_buffers_jump = 1
-nnoremap <silent> <Leader>ff :Files<CR>
-nnoremap <silent> <Leader>fg :GFiles<CR>
-nnoremap <silent> <Leader>fgs :GFiles?<CR>
-nnoremap <silent> <Leader>fb :Buffers<CR>
-nnoremap <silent> <Leader>fr :Rg<CR>
-nnoremap <silent> <Leader>fl :Lines<CR>
-nnoremap <silent> <Leader>fh :History<CR>
-nnoremap <silent> <Leader>fc :Commands<CR>
 
 # Git 差分表示
 Plug 'airblade/vim-gitgutter'
@@ -74,7 +65,7 @@ Plug 'airblade/vim-gitgutter'
 if exists('&signcolumn')  # Vim 7.4.2201
   set signcolumn=yes
 else
-  let g:gitgutter_sign_column_always = 1
+  g:gitgutter_sign_column_always = 1
 endif
 
 # Git コマンド (ステータスラインにブランチ名を表示させる用、Git コマンドは内蔵ターミナルや分割したペイン上で入力すればいい)
@@ -88,7 +79,7 @@ set noshowmode
 # 曖昧幅文字の文字幅設定 (デフォルトは single 、double だと lightline.vim の表示が崩れる)
 # https://www.soum.co.jp/misc/vim-no-susume/12/#id4
 # set ambiwidth=double
-let g:lightline = {
+g:lightline = {
         \ 'colorscheme': 'gruvbox',
         \ 'active': {
         \   'left': [ [ 'mode', 'paste' ], [ 'absolutepath', 'gitbranch' ], [ 'modified', 'readonly', 'bufnum' ] ],
@@ -98,20 +89,6 @@ let g:lightline = {
         \   'gitbranch': 'FugitiveHead',
         \ },
         \ }
-
-# インデントガイドの表示
-Plug 'Yggdroot/indentLine'
-# ラインカラーをカラースキーム基準にする
-let g:indentLine_setColors = 0
-# ラインに使う文字の設定
-let g:indentLine_char = '|'
-# テキストを隠さずに通常通り表示する
-let g:indentLine_conceallevel = 0
-
-# レジスタ一覧表示
-# ノーマルモードで # または @ 、挿入モードで <CTRL-R> を押すとサイドバーにレジスタの内容が表示される。それ以降のキー操作で自動的にサイドバーが閉じられる。
-Plug 'junegunn/vim-peekaboo'
-let g:peekaboo_window = 'split botright new'
 
 # 日本語ヘルプ
 Plug 'vim-jp/vimdoc-ja'
