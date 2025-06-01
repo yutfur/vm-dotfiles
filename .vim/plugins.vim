@@ -11,17 +11,13 @@ vim9script
 # Space を leader キーに設定する
 g:mapleader = "\<Space>"
 
-# vim-plug の自動インストール & インストールされていないプラグインがあった場合に自動で :PlugInstall を実行する
+# vim-plug がインストールされていなければインストールして、その後、:PlugInstall を実行する
 # https://github.com/junegunn/vim-plug/wiki/tips
-# Install vim-plug if not found
 if empty(glob('~/.vim/autoload/plug.vim'))
   silent !curl -fLo ~/.vim/autoload/plug.vim --create-dirs
     \ https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
+  autocmd VimEnter * PlugInstall --sync | source $MYVIMRC
 endif
-# Run PlugInstall if there are missing plugins
-autocmd VimEnter * if len(filter(values(g:plugs), '!isdirectory(v:val.dir)'))
-  \| PlugInstall --sync | source $MYVIMRC
-\| endif
 
 # ------------------ vim-plug プラグインリスト ------------------ #
 # https://github.com/junegunn/vim-plug
