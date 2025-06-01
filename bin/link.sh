@@ -24,12 +24,6 @@ do
     ln -snfv "${DOTFILES_PATH}"/"${f}" "${HOME}"/"${f}"
 done
 
-# $HOME/.config/... ディレクトリを作成
-for d in "lf" "zellij"
-do
-    mkdir -p "${HOME}"/.config/"${d}"
-done
-
 # Vim
 # Vim 用のディレクトリを作成
 for d in "recovery"
@@ -39,12 +33,19 @@ done
 # .vimrc のシンボリックリンクを $HOME 直下に貼る
 ln -snfv "${DOTFILES_PATH}"/.vim/vimrc "${HOME}"/.vimrc
 
+# $HOME/.config/... ディレクトリを作成
+for d in "zellij" "lf"
+do
+    mkdir -p "${HOME}"/.config/"${d}"
+done
+
 # Zellij
+# config.kdl のシンボリックリンクを $HOME/.config/zellij 直下に貼る
+ln -snfv "${DOTFILES_PATH}"/.config/zellij/config.kdl "${HOME}"/.config/zellij/config.kdl
 
 # LF
-# lf の設定ファイルのシンボリックリンクを $HOME/.config/lf 直下に貼る
+# lf の設定ファイル群のシンボリックリンクを $HOME/.config/lf 直下に貼る
 for f in "lfrc" "icons" "colors"
 do
     ln -snfv "${DOTFILES_PATH}"/.config/lf/"${f}" "${HOME}"/.config/lf/"${f}"
 done
-
