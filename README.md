@@ -3,25 +3,6 @@
 ## Requirement
 - Arch Linux (KDE Plasma) on VMware Workstation
 
-## Download
+## Download ＆ Deploy & Install
 
-```bash
-cd $HOME
-git clone https://github.com/yutfur/vm-dotfiles.git
-```
-
-## Setup
-
-```bash
-cd $HOME/vm-dotfiles
-chmod u+x ./bin/link.sh
-./bin/link.sh
-```
-
-## Install
-
-```bash
-cd $HOME/vm-dotfiles
-chmod u+x ./bin/install.sh
-./bin/install.sh
-```
+[https://github.com/yutfur/docs/blob/main/os/arch-settings.md](https://github.com/yutfur/docs/blob/main/os/arch-settings.md) の dotfiles の項を参照
