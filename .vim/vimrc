@@ -113,7 +113,7 @@ scriptencoding utf-8
 set nrformats=
 
 # システムクリップボードを共有する
-#set clipboard+=unnamedplus
+set clipboard=unnamedplus,autoselectplus
 
 # 挿入(インサート)モード・コマンドラインモード終了時に IME (日本語入力)をオフにする ( fcitx5 、https://wonwon-eater.com/linux-vim-neovim-ime/)
 if executable('fcitx5')
