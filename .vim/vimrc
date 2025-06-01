@@ -1,0 +1,340 @@
+vim9script
+
+# プラグイン及びその設定の読み込み ( vim-plug の call plug#end() の後に colorscheme 設定を記述しろとあるので)
+# https://mattn.kaoriya.net/software/vim/20191231001537.htm
+source $HOME/dotfiles/.config/nvim/plugins.vim
+
+# キーバインドを変える(コマンドの割当変更/機能変更/動作変更などの)設定は最小限にすること (原則、標準割当/標準機能/標準動作を使う・重んじること)
+
+# -------------------------------------------------------------------------------------------
+# 基本設定・操作
+# -------------------------------------------------------------------------------------------
+
+# Vi 互換を無効化する
+set nocompatible
+
+# 編集中のファイル名をウィンドウに表示する
+set title
+
+# マウス操作を有効化する
+set mouse=a
+# https://vim-jp.org/vimdoc-ja/options.html#'ttymouse'
+# https://www.soum.co.jp/misc/vim-no-susume/9/
+#set ttymouse=xterm2
+
+# 行番号を表示する
+set number
+
+# 現在行を強調表示する
+set cursorline
+
+# ウィンドウ水平分割時に、下側をカレントウィンドウとする
+set splitbelow
+
+# ウィンドウ垂直分割時に、右側をカレントウィンドウとする
+set splitright
+
+# 編集しているファイルの形式を自動検出して、そのファイル形式用のプラグインとインデントの設定を自動で読み込む
+filetype plugin indent on
+
+# ファイルを開いた時に最後のカーソル位置を復元する
+# https://zenn.dev/4513echo/articles/2021-12-11-vim-restore-cursor-ext
+augroup restore-cursor
+  autocmd!
+  autocmd BufReadPost *
+        \ : if line("'\"") >= 1 && line("'\"") <= line("$")
+        \ |   exe "normal! g`\""
+        \ | endif
+  autocmd BufWinEnter *
+        \ : if empty(&buftype) && line('.') > winheight(0) / 2
+        \ |   execute 'normal! zz'
+        \ | endif
+augroup END
+
+# -------------------------------------------------------------------------------------------
+# ファイル
+# -------------------------------------------------------------------------------------------
+
+# スワップファイルを作成する
+set swapfile
+
+# スワップファイルの出力先 (下記に出力先として指定したパスのディレクトリを事前に作成しておくこと)
+set directory=$HOME/.vim/recovery
+
+# バックアップファイルを作成する
+set backup
+set writebackup
+
+# バックアップファイルの出力先 (下記に出力先として指定したパスのディレクトリを事前に作成しておくこと)
+set backupdir=$HOME/.vim/recovery
+
+# アンドゥファイルを作成する
+set undofile
+
+# アンドゥファイルの出力先 (下記に出力先として指定したパスのディレクトリを事前に作成しておくこと)
+set undodir=$HOME/.vim/recovery
+
+# 保存されていないファイルを終了しようとした時に保存するか確認する
+set confirm
+
+# 保存されていないファイルがあるときでも別のファイルを開けるようにする
+set hidden
+
+# 開かれた/選択されたファイルを含んでいるディレクトリを自動的にカレントディレクトリとする
+set autochdir
+
+# ファイルブラウザの開始時、バッファで開いているファイルのディレクトリを開く
+set browsedir=buffer
+
+# -------------------------------------------------------------------------------------------
+# 入力
+# -------------------------------------------------------------------------------------------
+
+# GUI 版 Vim で使われるフォント
+set guifont=HackGen_Console_NF:h14
+set guifontwide=HackGen_Console_NF:h14
+
+# Vim 内で使われる文字コード
+set encoding=utf-8
+
+# ファイル書き込み時の文字コード
+set fileencoding=utf-8
+
+# ファイル読み込み時の文字コード (左側が優先される)
+set fileencodings=utf-8,iso-2022-jp,euc-jp,sjis,cp932
+
+# 使われる改行コード
+set fileformats=unix,dos,mac
+
+# Vim Script で使われる文字コード ( encoding オプションよりも下に置く)
+scriptencoding utf-8
+
+# 全ての数を10進数として扱う
+set nrformats=
+
+# システムクリップボードを共有する
+#set clipboard+=unnamedplus
+
+# 挿入(インサート)モード・コマンドラインモード終了時に IME (日本語入力)をオフにする ( fcitx5 、https://wonwon-eater.com/linux-vim-neovim-ime/)
+if executable('fcitx5')
+   autocmd InsertLeave * :call system('fcitx5-remote -c')
+   autocmd CmdlineLeave * :call system('fcitx5-remote -c')
+endif
+
+# BackSpace キーを有効化する
+set backspace=indent,eol,start
+
+# 入力中の/入力したコマンド(の一部)を画面の最下行に表示する
+set showcmd
+
+# カーソルを行末まで移動可能にする
+set virtualedit=onemore
+
+# 行頭/行末で左/右に移動した時に行をまたぐ移動をする
+set whichwrap=b,s,h,l,<,>,[,],~
+
+# 自動コメントアウトをオフにする
+augroup auto_comment_off
+  autocmd!
+  autocmd BufEnter * setlocal formatoptions-=r
+  autocmd BufEnter * setlocal formatoptions-=o
+augroup END
+
+# ファイル書き込み時に行末の空白を削除する
+autocmd BufWritePre * :%s/\s\+$//ge
+
+# テキストを折りたたまない (トグル表示しない)
+set nofoldenable
+
+# テキストを隠さずに通常通り表示する
+set conceallevel=0
+
+# 不可視文字を可視化する
+# https://maku77.github.io/p/s596qii/
+# https://qiita.com/pollenjp/items/459a08a2cc59485fa08b
+# https://scribble.washo3.com/vim-listchar
+set list
+set listchars=tab:»-,trail:-,eol:↲,extends:»,precedes:«,nbsp:%
+
+# 自動インデントを有効化する
+# https://vim-jp.org/vimdoc-ja/indent.html
+set smartindent
+
+# Tab 1 つ分の幅を半角スペース 4 つ分とする
+# https://vim-jp.org/vimdoc-ja/options.html#'softtabstop'
+# https://yu8mada.com/2018/08/26/i-ll-explain-vim-s-5-tab-and-space-related-somewhat-complicated-options-as-simply-as-possible/
+set softtabstop=4
+
+# 自動インデント 1 つ分の幅を半角スペース 4 つ分とする
+# https://vim-jp.org/vimdoc-ja/options.html#'shiftwidth'
+# https://yu8mada.com/2018/08/26/i-ll-explain-vim-s-5-tab-and-space-related-somewhat-complicated-options-as-simply-as-possible/
+set shiftwidth=4
+
+# Tab を半角スペースに変換する・半角スペースを Tab に変換しない
+# https://vim-jp.org/vimdoc-ja/options.html#'expandtab'
+# https://yu8mada.com/2018/08/26/i-ll-explain-vim-s-5-tab-and-space-related-somewhat-complicated-options-as-simply-as-possible/
+set expandtab
+
+# 挿入モードでの補完設定
+# https://vim-jp.org/vimdoc-ja/insert.html#ins-completion
+# https://vim-jp.org/vimdoc-ja/options.html#'complete'
+
+# コマンドライン入力欄の行数(高さ)を 1 にする
+set cmdheight=1
+
+# コマンドラインモードで Tab キーによる補完を有効にする
+# https://vim-jp.org/vimdoc-ja/options.html#'wildmenu'
+# https://vim-jp.org/vimdoc-ja/options.html#'wildoptions'
+# https://vim-jp.org/vimdoc-ja/options.html#'wildmode'
+# https://atomitech.jp/hinemos/study/other-service/vim-bash/
+set wildmenu
+set wildoptions=pum
+set wildmode=list:longest
+
+# コマンドライン履歴と検索パターン履歴を1000件まで保存する
+set history=1000
+
+# ペア記号を補完する
+# https://qiita.com/shingargle/items/dd1b5510a0685837504a
+inoremap ( ()<Left>
+inoremap { {}<Left>
+inoremap [ []<Left>
+inoremap < <><Left>
+inoremap ' ''<Left>
+inoremap " ""<Left>
+# HTML/XML 閉じタグ自動補完 (プラグインでやったほうがいいかも)
+# https://github.com/alvan/vim-closetag
+# augroup MyXML
+#   autocmd!
+#   autocmd Filetype xml inoremap <buffer> </ </<C-x><C-o>
+#   autocmd Filetype html inoremap <buffer> </ </<C-x><C-o>
+# augroup END
+
+# 対応するペア記号を強調表示する
+# https://vim-jp.org/vimdoc-ja/options.html#'showmatch'
+set showmatch
+# 対応するペア記号を定義する
+# https://vim-jp.org/vimdoc-ja/options.html#'matchpairs'
+set matchpairs+=(:),{:},[:],<:>
+
+# 括弧ジャンプを拡張する
+packadd! matchit
+
+# -------------------------------------------------------------------------------------------
+# 検索・置換
+# -------------------------------------------------------------------------------------------
+
+# 検索文字列が小文字のみの場合は大文字・小文字を区別せず検索する
+set ignorecase
+
+# 検索文字列に大文字が含まれている場合は大文字・小文字を区別して検索する
+set smartcase
+
+# インクリメンタル検索を有効化する
+set incsearch
+
+# 検索時に最後まで行ったら最初に戻る
+set wrapscan
+
+# 検索ワードとマッチするテキストをハイライト表示する
+set hlsearch
+
+# ESC キーの2度押しで検索ワードとマッチしたテキストのハイライト表示を消す
+nnoremap <silent> <ESC><ESC> :nohlsearch<CR>
+
+# -------------------------------------------------------------------------------------------
+# ターミナルモード
+# -------------------------------------------------------------------------------------------
+
+# ESC キーでターミナルモードからノーマルモードへ移行する
+tnoremap <ESC> <C-\><C-n>
+
+# 常にインサートモードでターミナルを開く
+autocmd TerminalOpen* startinsert
+
+# ターミナルモード時に行番号を非表示にする
+autocmd TerminalOpen * setlocal norelativenumber
+autocmd TerminalOpen * setlocal nonumber
+
+# -------------------------------------------------------------------------------------------
+# 外観
+# -------------------------------------------------------------------------------------------
+
+# Neovim/Vim True Color support ( https://github.com/morhetz/gruvbox/wiki/Terminal-specific )
+# Use 24-bit (true-color) mode in Vim/Neovim when outside tmux.
+# If you're using tmux version 2.2 or later, you can remove the outermost $TMUX check and use tmux's 24-bit color support
+# (see < http://sunaku.github.io/tmux-24bit-color.html#usage > for more information.)
+if (empty($TMUX) && getenv('TERM_PROGRAM') != 'Apple_Terminal')
+  if (has("nvim"))
+    #For Neovim 0.1.3 and 0.1.4 < https://github.com/neovim/neovim/pull/2198 >
+    var $NVIM_TUI_ENABLE_TRUE_COLOR=1
+  endif
+  #For Neovim > 0.1.5 and Vim > patch 7.4.1799 < https://github.com/vim/vim/commit/61be73bb0f965a895bfb064ea3e55476ac175162 >
+  #Based on Vim patch 7.4.1770 (`guicolors` option) < https://github.com/vim/vim/commit/8a633e3427b47286869aa4b96f2bfc1fe65b25cd >
+  # < https://github.com/neovim/neovim/wiki/Following-HEAD#20160511 >
+  if (has("termguicolors"))
+    set termguicolors
+  endif
+endif
+
+# ターミナル内での Vim を終了しターミナルへ戻った際にターミナルのカーソル形状を変えない
+#autocmd VimLeave * set guicursor=
+
+# ターミナル内での Vim において、モードごとのカーソル形状の変化を gVim と同様にする
+
+# シンタックスハイライトを有効化する (カラースキームの設定より上に置く)
+syntax enable
+
+# カラースキーム ( https://qiita.com/sff1019/items/3f73856b78d7fa2731c7 )
+# gruvbox ( https://github.com/morhetz/gruvbox )
+# gruvbox カラースキームにてコメントを斜体にしない ( https://github.com/morhetz/gruvbox/wiki/Terminal-specific )
+g:gruvbox_italic = 0
+colorscheme gruvbox
+# ayu ( https://github.com/ayu-theme/ayu-vim )
+# let ayucolor=#dark#
+# colorscheme ayu
+# monokai ( https://github.com/sickill/vim-monokai )
+# colorscheme monokai
+# molokai  (https://github.com/tomasr/molokai )
+# colorscheme molokai
+
+# 背景を透明化する (カラースキームの設定より下に置く)
+# https://qiita.com/s4kr4/items/b2c1b692ec430fe24f15
+# https://sy-base.com/myrobotics/vim/vim-transparent/
+# https://github.com/miyakogi/seiya.vim
+highlight Normal ctermbg=NONE guibg=NONE
+highlight NonText ctermbg=NONE guibg=NONE
+highlight SpecialKey ctermbg=NONE guibg=NONE
+highlight EndOfBuffer ctermbg=NONE guibg=NONE
+
+# ステータスラインの設定
+# ステータスラインを常に表示する
+set laststatus=2
+# ステータスラインの表示内容は lightline.vim で設定するので、以下はコメントアウト(無効化)する
+# バッファ番号を表示する
+# set statusline+=[%n]
+# 開いているファイルについて、ウィンドウの幅によってフルパス表示かファイル名のみ表示かを切り替える
+# if winwidth(0) >= 130
+#   set statusline+=%F
+# else
+#   set statusline+=%t
+# endif
+# 開いているファイルの内容に保存されていない変更があるかを表示する
+# set statusline+=%m
+# 読み込み専用かどうかを表示する
+# set statusline+=%r
+# ヘルプページなら[help]と表示する
+# set statusline+=%h
+# プレビューウィンドウなら[Preview]と表示する
+# set statusline+=%w
+# これより以下の設定はステータスラインの右側に表示される
+# set statusline+=%=
+# 開いているファイルの文字コードが設定されている場合はそのファイルの文字コードを表示し、設定されていないなら Vim の文字コードを表示する、また、そのファイルのファイルフォーマットも表示する
+# set statusline+=%{'['.(&fenc!=''?&fenc:&enc).':'.&ff.']'}
+# 開いているファイルのタイプを表示する
+# set statusline+=%y
+# 開いているファイルについて、[現在行数/全行数]を表示する
+# set statusline+=[LOW=%l/%L]
+# ステータスラインの右側にカーソル位置の座標を表示する
+# set ruler
+
