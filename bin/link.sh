@@ -26,10 +26,12 @@ done
 
 # Vim
 # Vim 用のディレクトリを作成
-for d in "recovery"
+for d in "recovery" "colors"
 do
     mkdir -p "${HOME}"/.vim/"${d}"
 done
+# Vim 用のカラースキームをコピー
+cp -i "${DOTFILES_PATH}"/.vim/colors/colorscheme/* "${HOME}"/.vim/colors/
 # .vimrc のシンボリックリンクを $HOME 直下に貼る
 ln -snfv "${DOTFILES_PATH}"/.vim/vimrc "${HOME}"/.vimrc
 
