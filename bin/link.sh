@@ -36,3 +36,5 @@ for d in "recovery"
 do
     mkdir -p "${HOME}"/.vim/"${d}"
 done
+# $HOME/.vimrc をシンボリックリンクとして作成する
+ln -snfv "${DOTFILES_PATH}"/.vim/vimrc "${HOME}"/.vimrc
