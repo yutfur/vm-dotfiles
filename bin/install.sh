@@ -43,20 +43,6 @@ packagelist=(
    "copyq"
    "chromium"
 
-   # LF
-   "lf"
-   # Preview (ctpv)
-   # https://github.com/NikitaIvanovV/ctpv
-   # pdftoppm は poppler に同梱されている
-   "chafa"
-   "ffmpegthumbnailer"
-   "poppler"
-   #"w3m"
-   #"mdcat"
-   #"jq"
-   #"fontimage"
-   #"convert"
-
    # Terminal, Shell, Command
    "zellij"
    "fzf"
@@ -85,7 +71,6 @@ yay -Syu
 aurs=(
 
    "visual-studio-code-bin"
-   "ctpv-git"
 
 )
 
