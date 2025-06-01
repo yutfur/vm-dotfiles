@@ -282,7 +282,7 @@ syntax enable
 
 # カラースキーム ( https://qiita.com/sff1019/items/3f73856b78d7fa2731c7 )
 # gruvbox ( https://github.com/morhetz/gruvbox )
-# gruvbox カラースキームにてコメントを斜体にしない ( https://github.com/morhetz/gruvbox/wiki/Terminal-specific )
+# gruvbox カラースキームにてコメントを斜体にしない ( https://github.com/morhetz/gruvbox/wiki/Terminal-specific#1-italics-is-disabled )
 g:gruvbox_italic = 0
 colorscheme gruvbox
 # ayu ( https://github.com/ayu-theme/ayu-vim )
