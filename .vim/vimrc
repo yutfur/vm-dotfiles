@@ -250,7 +250,7 @@ nnoremap <silent> <ESC><ESC> :nohlsearch<CR>
 tnoremap <ESC> <C-\><C-n>
 
 # 常にインサートモードでターミナルを開く
-autocmd TerminalOpen* startinsert
+autocmd TerminalOpen * startinsert
 
 # ターミナルモード時に行番号を非表示にする
 autocmd TerminalOpen * setlocal norelativenumber
