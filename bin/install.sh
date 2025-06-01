@@ -1,9 +1,9 @@
 #!/bin/bash
 
-# update & upgrade packages (Official repositories)
+# Update & Upgrade packages (Official repositories)
 sudo pacman -Syu
 
-# package list
+# Package list
 packagelist=(
 
    # Hardware
@@ -59,37 +59,29 @@ packagelist=(
 
 )
 
-# install packages
+# Install packages
 for packages in "${packagelist[@]}"
 do
    sudo pacman -S --noconfirm "${packages}"
 done
 
-# install AUR helper paru
-sudo pacman -S --needed base-devel
-git clone https://aur.archlinux.org/paru.git
-cd paru || exit
-makepkg -si
-cd ..
-rm -rf paru
+# Update & Upgrade packages (AUR)
+# Use yay without sudo
+yay -Syu
 
-# update & upgrade packages (Official repositories and AUR)
-# Use paru without sudo
-paru -Syu
-
-# aur package list
+# AUR package list
 aurs=(
 
    "visual-studio-code-bin"
 
 )
 
-# install AUR packages
+# Install AUR packages
 for packages in "${aurs[@]}"
 do
-   paru -S "${packages}"
+   yay -S "${packages}"
 done
 
-# autoremove
-# sudo pacman -Rns "$(pacman -Qdtq)"
-paru -c
+# Clean unneeded dependencies
+# apt autoremove, pacman -Rns "$(pacman -Qdtq)"
+yay -Yc
