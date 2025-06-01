@@ -36,7 +36,7 @@ cp -i "${DOTFILES_PATH}"/.vim/colors/colorscheme/* "${HOME}"/.vim/colors/
 ln -snfv "${DOTFILES_PATH}"/.vim/vimrc "${HOME}"/.vimrc
 
 # $HOME/.config/... ディレクトリを作成
-for d in "zellij" "lf"
+for d in "zellij"
 do
     mkdir -p "${HOME}"/.config/"${d}"
 done
@@ -44,10 +44,3 @@ done
 # Zellij
 # config.kdl のシンボリックリンクを $HOME/.config/zellij 直下に貼る
 ln -snfv "${DOTFILES_PATH}"/.config/zellij/config.kdl "${HOME}"/.config/zellij/config.kdl
-
-# LF
-# lf の設定ファイル群のシンボリックリンクを $HOME/.config/lf 直下に貼る
-for f in "lfrc" "icons" "colors"
-do
-    ln -snfv "${DOTFILES_PATH}"/.config/lf/"${f}" "${HOME}"/.config/lf/"${f}"
-done
