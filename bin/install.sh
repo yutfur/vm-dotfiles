@@ -46,8 +46,6 @@ packagelist=(
    # Shell, Command
    "zellij"
    "fzf"
-   "curl"
-   "wget"
 
    # Dev
    "git"
