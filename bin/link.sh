@@ -25,7 +25,7 @@ do
 done
 
 # $HOME/.config/... ディレクトリを作成
-for d in "lf"
+for d in "lf" "zellij"
 do
     mkdir -p "${HOME}"/.config/"${d}"
 done
@@ -39,7 +39,9 @@ done
 # .vimrc のシンボリックリンクを $HOME 直下に貼る
 ln -snfv "${DOTFILES_PATH}"/.vim/vimrc "${HOME}"/.vimrc
 
-# lf
+# Zellij
+
+# LF
 # lf の設定ファイルのシンボリックリンクを $HOME/.config/lf 直下に貼る
 for f in "lfrc" "icons" "colors"
 do
