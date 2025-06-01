@@ -1,6 +1,7 @@
 # vm-dotfiles
 
 ## Requirement
+
 - Arch Linux (KDE Plasma) on VMware Workstation
 
 ## Download ＆ Deploy & Install
