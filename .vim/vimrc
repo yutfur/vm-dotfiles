@@ -2,7 +2,7 @@ vim9script
 
 # プラグイン及びその設定の読み込み ( vim-plug の call plug#end() の後に colorscheme 設定を記述しろとあるので)
 # https://mattn.kaoriya.net/software/vim/20191231001537.htm
-source $HOME/dotfiles/.config/nvim/plugins.vim
+source $HOME/vm-dotfiles/.vim/plugins.vim
 
 # キーバインドを変える(コマンドの割当変更/機能変更/動作変更などの)設定は最小限にすること (原則、標準割当/標準機能/標準動作を使う・重んじること)
 
