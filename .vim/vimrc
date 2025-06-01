@@ -277,15 +277,6 @@ if (empty($TMUX) && getenv('TERM_PROGRAM') != 'Apple_Terminal')
   endif
 endif
 
-# ターミナル内での Vim において、モードごとのカーソル形状の変化を gVim と同様にする
-# これは set termguicolors または set t_Co=256 の後に設定する
-# DECSCUSR エスケープシーケンスを使用する
-&t_SI = "\e[5 q"    # バー点滅
-&t_SR = "\e[3 q"    # 下線点滅
-&t_EI = "\e[1 q"    # ブロック点滅
-&t_ti ..= "\e[1 q"  # ブロック点滅
-&t_te ..= "\e[0 q"  # デフォルト (端末に依存するが、通常はブロック点滅)
-
 # シンタックスハイライトを有効化する (カラースキームの設定より上に置く)
 syntax enable
 
@@ -342,3 +333,11 @@ set laststatus=2
 # ステータスラインの右側にカーソル位置の座標を表示する
 # set ruler
 
+# ターミナル内での Vim において、モードごとのカーソル形状の変化を gVim と同様にする
+# これは set termguicolors または set t_Co=256 の後に設定する
+# DECSCUSR エスケープシーケンスを使用する
+&t_SI = "\e[5 q"    # バー点滅
+&t_SR = "\e[3 q"    # 下線点滅
+&t_EI = "\e[1 q"    # ブロック点滅
+&t_ti ..= "\e[1 q"  # ブロック点滅
+&t_te ..= "\e[0 q"  # デフォルト (端末に依存するが、通常はブロック点滅)
