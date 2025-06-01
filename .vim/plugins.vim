@@ -14,9 +14,9 @@ g:mapleader = "\<Space>"
 # vim-plug がインストールされていなければインストールして、その後、:PlugInstall を実行する
 # https://github.com/junegunn/vim-plug/wiki/tips
 if empty(glob('~/.vim/autoload/plug.vim'))
-  silent !curl -fLo ~/.vim/autoload/plug.vim --create-dirs
-    \ https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
-  autocmd VimEnter * PlugInstall --sync | source $MYVIMRC
+    silent !curl -fLo ~/.vim/autoload/plug.vim --create-dirs
+        \ https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
+    autocmd VimEnter * PlugInstall --sync | source $MYVIMRC
 endif
 
 # ------------------ vim-plug プラグインリスト ------------------ #
@@ -59,9 +59,9 @@ Plug 'junegunn/fzf.vim'
 Plug 'airblade/vim-gitgutter'
 # 目印行を常に表示する
 if exists('&signcolumn')  # Vim 7.4.2201
-  set signcolumn=yes
+    set signcolumn=yes
 else
-  g:gitgutter_sign_column_always = 1
+    g:gitgutter_sign_column_always = 1
 endif
 
 # Git コマンド (ステータスラインにブランチ名を表示させる用、Git コマンドは内蔵ターミナルや分割したペイン上で入力すればいい)
