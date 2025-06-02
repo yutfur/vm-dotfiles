@@ -26,8 +26,6 @@ export PATH="$PATH:$JAVA_HOME/bin"
 
 # fcitx5 の環境変数の設定
 export XMODIFIERS=@im=fcitx
-#export GTK_IM_MODULE=fcitx
-#export QT_IM_MODULE=fcitx
 
 # デフォルトエディタを Vim にする
 export EDITOR=vim
