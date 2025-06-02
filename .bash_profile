@@ -24,7 +24,7 @@ fi
 export JAVA_HOME="/usr/lib/jvm/java-17-openjdk"
 export PATH="$PATH:$JAVA_HOME/bin"
 
-# fcitx5 の環境変数の設定
+# Fcitx 5 の環境変数の設定
 export XMODIFIERS=@im=fcitx
 
 # デフォルトエディタを Vim にする
