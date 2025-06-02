@@ -19,6 +19,7 @@ packagelist=(
     #"xorg-xwayland"
 
     # UI
+    # KDE
 
     # Audio
     "pipewire"
