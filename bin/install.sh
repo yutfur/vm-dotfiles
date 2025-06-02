@@ -69,7 +69,7 @@ yay -Syu
 # AUR package list
 aurs=(
 
-    "eclipse-java-bin" # 依存パッケージとして複数バージョンの JDK も一緒にインストールされる
+    "eclipse-java-bin" # 依存パッケージとして複数バージョンの JDK も一緒にインストールされる ( https://aur.archlinux.org/packages/eclipse-java-bin )
 
 )
 
