@@ -8,7 +8,7 @@
 #typeset -T LD_LIBRARY_PATH ld_library_path; typeset -U ld_library_path
 #typeset -T LIBRARY_PATH library_path; typeset -U library_path
 #typeset -T CPATH cpath; typeset -U cpath
-3typeset -U path PATH cdpath fpath manpath
+#typeset -U path PATH cdpath fpath manpath
 
 # $HOME/bin ディレクトリが存在するならば、このディレクトリのパスを通す
 if [ -d "$HOME/bin" ] ; then
