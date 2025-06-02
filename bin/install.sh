@@ -51,7 +51,6 @@ packagelist=(
     "git"
 
     # Java
-    "jdk17-openjdk"
 
     # DB
 
@@ -70,7 +69,7 @@ yay -Syu
 # AUR package list
 aurs=(
 
-    "visual-studio-code-bin"
+    "eclipse-java-bin" # 依存パッケージとして複数バージョンの JDK も一緒にインストールされる
 
 )
 
