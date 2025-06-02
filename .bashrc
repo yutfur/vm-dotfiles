@@ -8,6 +8,7 @@
 # エイリアス (設定しすぎないこと)
 alias ls='ls -alF --color=always'
 alias grep='grep --color=auto'
+alias vi='vim'
 
 # プロンプト
 PS1='[\u@\h \W]\$ '
