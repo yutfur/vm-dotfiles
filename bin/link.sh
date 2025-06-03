@@ -31,7 +31,7 @@ do
     mkdir -p "${HOME}"/.vim/"${d}"
 done
 # Vim 用のカラースキームをコピー
-cp -i "${DOTFILES_PATH}"/.vim/colors/colorscheme/* "${HOME}"/.vim/colors/
+cp -i "${DOTFILES_PATH}"/.vim/colors/* "${HOME}"/.vim/colors/
 # .vimrc のシンボリックリンクを $HOME 直下に貼る
 ln -snfv "${DOTFILES_PATH}"/.vim/vimrc "${HOME}"/.vimrc
 
