@@ -77,7 +77,7 @@ set noshowmode
 # https://www.soum.co.jp/misc/vim-no-susume/12/#id4
 # set ambiwidth=double
 g:lightline = {
-    \ 'colorscheme': 'gruvbox',
+    \ 'colorscheme': 'selenized_light',
     \ 'active': {
     \     'left': [ [ 'mode', 'paste' ], [ 'absolutepath', 'gitbranch' ], [ 'modified', 'readonly', 'bufnum' ] ],
     \     'right': [ [ 'lineinfo', 'percent' ], [ 'filetype', 'fileformat', 'fileencoding' ] ]
