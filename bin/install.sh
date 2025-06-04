@@ -33,7 +33,7 @@ packagelist=(
     # IME
     # Enter a selection に 1-4 (全て) と入力する
     "fcitx5-im"
-    "fcitx5-mozc"
+    #"fcitx5-mozc"
 
     # Misc, Tools
     "gvim"
@@ -71,6 +71,7 @@ yay -Syu
 aurs=(
 
     "eclipse-java-bin" # 依存パッケージとして複数バージョンの JDK も一緒にインストールされる ( https://aur.archlinux.org/packages/eclipse-java-bin )
+    "fcitx5-mozc-ut"
 
 )
 
