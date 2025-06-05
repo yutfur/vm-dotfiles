@@ -29,4 +29,3 @@ export FZF_DEFAULT_OPTS='--height 95% --reverse --border'
 #   fi
 # fi
 
-

@@ -2,7 +2,10 @@
 # ~/.bash_profile
 #
 
-[[ -f ~/.bashrc ]] && . ~/.bashrc
+# ~/.bashrc ファイルが存在するならば、それを現在のシェルで実行(読み込み)する
+if [ -f ~/.bashrc ]; then
+  . ~/.bashrc
+fi
 
 # $HOME/bin ディレクトリが存在するならば、このディレクトリのパスを通す
 if [ -d "$HOME/bin" ] ; then
