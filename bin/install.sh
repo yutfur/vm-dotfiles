@@ -57,6 +57,9 @@ packagelist=(
     "zellij"
     "fzf"
 
+    # Remote
+    #"openssh"
+
     # Dev
     "gvim"
     "git"
