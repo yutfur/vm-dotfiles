@@ -1,25 +1,34 @@
 #!/bin/bash
 
-# Update & Upgrade packages (Official repositories)
-sudo pacman -Syu
+# Update & Upgrade packages (Official repositories & AUR)
+# Use yay without sudo
+yay -Syu
 
 # Package list
 packagelist=(
 
-    # Hardware
+    # CPU/GPU Driver
     "mesa"
     "xf86-video-vmware"
+
+    # VMware Tools
     "open-vm-tools"
     "gtkmm3"
     "xf86-input-vmmouse"
+
+    # Input Device
     "imwheel"
+    "input-remapper-git" # AUR
+    #"piper"
+
+    # USB
     #"ntfs-3g"
 
     # Wayland
     #"xorg-xwayland"
 
     # UI
-    # KDE
+    #"plasma"
 
     # Audio
     "pipewire"
@@ -33,10 +42,10 @@ packagelist=(
     # IME
     # Enter a selection に 1-4 (全て) と入力する
     "fcitx5-im"
+    "fcitx5-mozc-ut" # AUR
     #"fcitx5-mozc"
 
     # Misc, Tools
-    "gvim"
     "man-db"
     "man-pages"
     "pacman-contrib"
@@ -44,39 +53,23 @@ packagelist=(
     "copyq"
     "chromium"
 
-    # Terminal, Shell, Command
+    # Terminal, Shell, Commands
     "zellij"
     "fzf"
 
     # Dev
+    "gvim"
     "git"
 
     # Java
+    "eclipse-java-bin" # AUR 、依存パッケージとして複数バージョンの JDK も一緒にインストールされる ( https://aur.archlinux.org/packages/eclipse-java-bin )
 
     # DB
 
 )
 
-# Install packages
+# Install packages (from Official repositories & AUR)
 for packages in "${packagelist[@]}"
-do
-    sudo pacman -S --noconfirm "${packages}"
-done
-
-# Update & Upgrade packages (AUR)
-# Use yay without sudo
-yay -Syu
-
-# AUR package list
-aurs=(
-
-    "eclipse-java-bin" # 依存パッケージとして複数バージョンの JDK も一緒にインストールされる ( https://aur.archlinux.org/packages/eclipse-java-bin )
-    "fcitx5-mozc-ut"
-
-)
-
-# Install AUR packages
-for packages in "${aurs[@]}"
 do
     yay -S "${packages}"
 done
