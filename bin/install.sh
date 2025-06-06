@@ -25,6 +25,7 @@ packagelist=(
     #"ntfs-3g"
 
     # Wayland
+    "wl-clipboard"
     #"xorg-xwayland"
 
     # UI
