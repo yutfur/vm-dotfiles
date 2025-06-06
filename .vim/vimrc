@@ -78,6 +78,10 @@ endif
 # 入力中の/入力したコマンド(の一部)を画面の最下行に表示する
 set showcmd
 
+# 曖昧幅文字を全て全角文字幅で処理する
+# https://www.soum.co.jp/misc/vim-no-susume/12/#id4
+set ambiwidth=double
+
 # 不可視文字を可視化する
 # https://maku77.github.io/p/s596qii/
 # https://qiita.com/pollenjp/items/459a08a2cc59485fa08b
@@ -208,30 +212,24 @@ set background=light
 # ステータスラインの設定
 # ステータスラインを常に表示する
 set laststatus=2
-# ステータスラインの表示内容は lightline.vim で設定するので、以下はコメントアウト(無効化)する
-# バッファ番号を表示する
-#set statusline+=[%n]
-# 開いているファイルについて、ウィンドウの幅によってフルパス表示かファイル名のみ表示かを切り替える
-#if winwidth(0) >= 130
-#    set statusline+=%F
-#else
-#    set statusline+=%t
-#endif
-# 開いているファイルの内容に保存されていない変更があるかを表示する
-#set statusline+=%m
-# 読み込み専用かどうかを表示する
-#set statusline+=%r
 # ヘルプページなら[help]と表示する
-#set statusline+=%h
+set statusline+=%h
 # プレビューウィンドウなら[Preview]と表示する
-#set statusline+=%w
+set statusline+=%w
+# 開いているファイルのフルパスを表示する
+set statusline+=%F
+# 読み込み専用かどうかを表示する
+set statusline+=%r
+# バッファ番号を表示する
+set statusline+=[%n]
+# 開いているファイルの内容に保存されていない変更があるかを表示する
+set statusline+=%m
 # これより以下の設定はステータスラインの右側に表示される
-#set statusline+=%=
-# 開いているファイルの文字コードが設定されている場合はそのファイルの文字コードを表示し、設定されていないなら Vim の文字コードを表示する、また、そのファイルのファイルフォーマットも表示する
-#set statusline+=%{'['.(&fenc!=''?&fenc:&enc).':'.&ff.']'}
+set statusline+=%=
 # 開いているファイルのタイプを表示する
-#set statusline+=%y
+set statusline+=%y
+# 開いているファイルの文字コードが設定されている場合はそのファイルの文字コードを表示し、設定されていないなら Vim の文字コードを表示する、また、そのファイルのファイルフォーマットも表示する
+set statusline+=%{'['.(&fenc!=''?&fenc:&enc).':'.&ff.']'}
 # 開いているファイルについて、[現在行数/全行数]を表示する
-#set statusline+=[LOW=%l/%L]
-# ステータスラインの右側にカーソル位置の座標を表示する
-#set ruler
+set statusline+=[LOW=%l/%L]
+
