@@ -11,29 +11,11 @@ source $HOME/vm-dotfiles/.vim/plugins.vim
 # 基本設定・操作
 # -------------------------------------------------------------------------------------------
 
-# Vi 互換を無効化する
-set nocompatible
-
-# 編集中のファイル名をウィンドウに表示する
-set title
-
-# マウス操作を有効化する
-set mouse=a
-# https://vim-jp.org/vimdoc-ja/options.html#'ttymouse'
-# https://www.soum.co.jp/misc/vim-no-susume/9/
-#set ttymouse=xterm2
-
 # 行番号を表示する
 set number
 
 # 現在行を強調表示する
 set cursorline
-
-# ウィンドウ水平分割時に、下側をカレントウィンドウとする
-set splitbelow
-
-# ウィンドウ垂直分割時に、右側をカレントウィンドウとする
-set splitright
 
 # 編集しているファイルの形式を自動検出して、そのファイル形式用のプラグインとインデントの設定を自動で読み込む
 filetype plugin indent on
@@ -56,19 +38,6 @@ augroup END
 # ファイル
 # -------------------------------------------------------------------------------------------
 
-# スワップファイルを作成する
-set swapfile
-
-# スワップファイルの出力先 (下記に出力先として指定したパスのディレクトリを事前に作成しておくこと)
-set directory=$HOME/.vim/recovery
-
-# バックアップファイルを作成する
-set backup
-set writebackup
-
-# バックアップファイルの出力先 (下記に出力先として指定したパスのディレクトリを事前に作成しておくこと)
-set backupdir=$HOME/.vim/recovery
-
 # アンドゥファイルを作成する
 set undofile
 
@@ -90,10 +59,6 @@ set browsedir=buffer
 # -------------------------------------------------------------------------------------------
 # 入力
 # -------------------------------------------------------------------------------------------
-
-# GUI 版 Vim で使われるフォント
-set guifont=HackGen_Console_NF:h14
-set guifontwide=HackGen_Console_NF:h14
 
 # Vim 内で使われる文字コード
 set encoding=utf-8
