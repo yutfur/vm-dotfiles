@@ -54,34 +54,6 @@ g:indent_guides_exclude_filetypes = ['help']
 
 # Git 差分表示
 Plug 'airblade/vim-gitgutter'
-# 目印行を常に表示する
-if exists('&signcolumn')  # Vim 7.4.2201
-    set signcolumn=yes
-else
-    g:gitgutter_sign_column_always = 1
-endif
-
-# Git コマンド (ステータスラインにブランチ名を表示させる用、Git コマンドは内蔵ターミナルや分割したペイン上で入力すればいい)
-Plug 'tpope/vim-fugitive'
-set statusline+=%{fugitive#statusline()}
-
-# ステータスラインのカスタマイズ
-Plug 'itchyny/lightline.vim'
-# モード非表示
-set noshowmode
-# 曖昧幅文字の文字幅設定 (デフォルトは single 、double だと lightline.vim の表示が崩れる)
-# https://www.soum.co.jp/misc/vim-no-susume/12/#id4
-# set ambiwidth=double
-g:lightline = {
-    \ 'colorscheme': 'selenized_light',
-    \ 'active': {
-    \     'left': [ [ 'mode', 'paste' ], [ 'absolutepath', 'gitbranch' ], [ 'modified', 'readonly', 'bufnum' ] ],
-    \     'right': [ [ 'lineinfo', 'percent' ], [ 'filetype', 'fileformat', 'fileencoding' ] ]
-    \ },
-    \ 'component_function': {
-    \     'gitbranch': 'FugitiveHead',
-    \ },
-    \ }
 
 # 日本語ヘルプ
 Plug 'vim-jp/vimdoc-ja'
