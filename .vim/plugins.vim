@@ -52,10 +52,6 @@ g:indent_guides_start_level = 2
 g:indent_guides_guide_size = 1
 g:indent_guides_exclude_filetypes = ['help']
 
-# ファジーファインダー
-Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
-Plug 'junegunn/fzf.vim'
-
 # Git 差分表示
 Plug 'airblade/vim-gitgutter'
 # 目印行を常に表示する
