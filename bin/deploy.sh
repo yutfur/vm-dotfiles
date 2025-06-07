@@ -24,6 +24,10 @@ do
     ln -snfv "${DOTFILES_PATH}"/"${f}" "${HOME}"/"${f}"
 done
 
+# Bash
+# .blerc のシンボリックリンクを $HOME 直下に貼る
+ln -snfv "${DOTFILES_PATH}"/bash/.blerc "${HOME}"/.blerc
+
 # Vim
 # Vim 用のディレクトリを作成
 for d in "recovery" "colors"
@@ -32,8 +36,8 @@ do
 done
 # Vim 用のカラースキームをコピー
 cp -i "${DOTFILES_PATH}"/.vim/colors/* "${HOME}"/.vim/colors/
-# .vimrc のシンボリックリンクを $HOME 直下に貼る
-ln -snfv "${DOTFILES_PATH}"/.vim/vimrc "${HOME}"/.vimrc
+# vimrc のシンボリックリンクを $HOME/.vim 直下に貼る
+ln -snfv "${DOTFILES_PATH}"/.vim/vimrc "${HOME}"/.vim/vimrc
 
 # $HOME/.config/... ディレクトリを作成
 for d in "zellij"
@@ -44,3 +48,4 @@ done
 # Zellij
 # config.kdl のシンボリックリンクを $HOME/.config/zellij 直下に貼る
 ln -snfv "${DOTFILES_PATH}"/.config/zellij/config.kdl "${HOME}"/.config/zellij/config.kdl
+

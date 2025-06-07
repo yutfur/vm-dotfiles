@@ -5,12 +5,16 @@
 # If not running interactively, don't do anything
 [[ $- != *i* ]] && return
 
-# エイリアス (設定しすぎないこと)
-alias ls='ls -alF --color=always'
-alias grep='grep --color=auto'
+# Oh My Posh
+eval "$(oh-my-posh init bash --config $HOME/vm-dotfiles/bash/oh-my-posh/honukai.omp.json)"
 
-# プロンプト
-PS1='[\u@\h \W]\$ '
+# エイリアス (設定しすぎないこと)
+# dircolors
+eval $(dircolors $HOME/vm-dotfiles/bash/dircolors/solarized/dircolors.ansi-light)
+# ls
+alias ls='ls -alF --color=auto'
+# grep
+alias grep='grep --color=auto'
 
 # ターミナル起動時に tmux 自動起動 (デタッチしたセッションが存在しなければ新しいセッションで起動し、デタッチしたセッションが存在すれば直近のセッションで起動する)
 # https://www.mk-mode.com/blog/2013/06/06/linux-mint-tmux-auto-attach/
