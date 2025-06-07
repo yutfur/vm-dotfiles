@@ -205,12 +205,12 @@ set ttimeoutlen=10
 syntax enable
 
 # カラースキーム ( https://qiita.com/sff1019/items/3f73856b78d7fa2731c7 )
-# Selenized ( https://github.com/jan-warchol/selenized/tree/master/editors/vim )
-colorscheme selenized
 # Selenized Light
 set background=light
 # Selenized Dark
 #set background=dark
+# Selenized ( https://github.com/jan-warchol/selenized/tree/master/editors/vim )
+colorscheme selenized
 
 # ステータスラインの設定
 # ステータスラインを常に表示する
