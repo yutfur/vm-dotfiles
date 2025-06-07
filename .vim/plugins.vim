@@ -54,6 +54,8 @@ g:indent_guides_exclude_filetypes = ['help']
 
 # Git 差分表示
 Plug 'airblade/vim-gitgutter'
+# 目印行を常に表示する
+set signcolumn=yes
 
 # 日本語ヘルプ
 Plug 'vim-jp/vimdoc-ja'

@@ -26,3 +26,4 @@ export XMODIFIERS=@im=fcitx
 
 # デフォルトエディタを Vim にする
 export EDITOR=vim
+

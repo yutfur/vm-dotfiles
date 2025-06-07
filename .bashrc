@@ -22,10 +22,7 @@ PS1='[\u@\h \W]\$ '
 #   fi
 # fi
 
-# fzf 有効化
+# FZF 有効化
 # Set up fzf key bindings and fuzzy completion ( https://github.com/junegunn/fzf )
 eval "$(fzf --bash)"
-# fzf 絞り込み画面の高さ調整(--height)、上下表示(--reverse : 逆)、枠線表示(--border)
-# https://wonderwall.hatenablog.com/entry/2017/10/06/063000
-export FZF_DEFAULT_OPTS='--height 95% --reverse --border'
 
